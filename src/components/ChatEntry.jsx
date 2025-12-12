@@ -4,13 +4,14 @@ import TimeStamp from './TimeStamp';
 import propTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  const [isLiked, updateLike] = useState(false);
-
-  const displayLike = () => {
-    if (isLiked === false) {
-      return '🤍';
-    } else {
+  const likeButtonClicked = () => {
+    props.onLikeToggle(props.id);
+  };
+  const displayLikeButton = () => {
+    if (props.liked === true) {
       return '❤️';
+    } else {
+      return '🤍';
     }
   };
 
@@ -20,16 +21,19 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <TimeStamp time={props.timeStamp}></TimeStamp>
-        <button className="like" onClick={ () => updateLike(!isLiked)}>{displayLike()}</button>
+        <button className="like" onClick={likeButtonClicked}>{displayLikeButton()}</button>
       </section>
     </section>
   );
 };
 
 ChatEntry.propTypes = {
+  id: propTypes.number.isRequired,
   sender: propTypes.string.isRequired,
   body: propTypes.string.isRequired,
   timeStamp: propTypes.string.isRequired,
+  liked: propTypes.bool.isRequired,
+  onLikeToggle: propTypes.func.isRequired
 };
 
 export default ChatEntry;
