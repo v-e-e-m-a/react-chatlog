@@ -16,17 +16,27 @@ const App = () => {
       }
     });
     setChatData(chats);
-    ;
+    calculateLikeNumber();
+  };
+
+  const calculateLikeNumber = () => {
+    let counter = 0;
+    for (let entry of chatData) {
+      if (entry.liked === true) {
+        counter += 1;
+      }
+      console.log(counter);
+    }
+    return counter;
   };
 
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
+        <h2>Like Counter: {calculateLikeNumber()}</h2>
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
         <ChatLog entries={chatData} onChatLikeToggle={toggleLikeButton}></ChatLog>
       </main>
     </div>
