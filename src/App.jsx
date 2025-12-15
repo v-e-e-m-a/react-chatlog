@@ -34,7 +34,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Application title</h1>
-        <h2>Like Counter: {calculateLikeNumber()}</h2>
+        <h2>{calculateLikeNumber()} ❤️s</h2>
       </header>
       <main>
         <ChatLog entries={chatData} onChatLikeToggle={toggleLikeButton}></ChatLog>
