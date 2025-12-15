@@ -25,7 +25,6 @@ const App = () => {
       if (entry.liked === true) {
         counter += 1;
       }
-      console.log(counter);
     }
     return counter;
   };
@@ -34,8 +33,6 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat Between {chatData[0].sender} and {chatData[1].sender}</h1>
-        <h2>Like Counter: {calculateLikeNumber()}</h2>
-        <h1>Application title</h1>
         <h2>{calculateLikeNumber()} ❤️s</h2>
       </header>
       <main>
