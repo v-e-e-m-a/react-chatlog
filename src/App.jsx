@@ -16,7 +16,7 @@ const App = () => {
       }
     });
     setChatData(chats);
-    calculateLikeNumber();
+    calculateLikeNumber();;
   };
 
   const calculateLikeNumber = () => {

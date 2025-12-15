@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
 import propTypes from 'prop-types';
@@ -42,7 +41,7 @@ ChatEntry.propTypes = {
   body: propTypes.string.isRequired,
   timeStamp: propTypes.string.isRequired,
   liked: propTypes.bool.isRequired,
-  onLikeToggle: propTypes.func.isRequired
+  onLikeToggle: propTypes.func
 };
 
 export default ChatEntry;

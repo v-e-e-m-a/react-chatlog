@@ -18,7 +18,7 @@ const ChatLog = (props) => {
 
 ChatLog.propTypes = {
   entries: propTypes.array.isRequired,
-  onChatLikeToggle: propTypes.func.isRequired
+  onChatLikeToggle: propTypes.func
 };
 
 export default ChatLog;
