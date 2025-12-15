@@ -7,6 +7,7 @@ const ChatEntry = (props) => {
   const likeButtonClicked = () => {
     props.onLikeToggle(props.id);
   };
+
   const displayLikeButton = () => {
     if (props.liked === true) {
       return '❤️';
@@ -15,8 +16,16 @@ const ChatEntry = (props) => {
     }
   };
 
+  const chatEntryClass = () => {
+    if (props.sender === 'Vladimir') {
+      return 'chat-entry local';
+    } else {
+      return 'chat-entry remote';
+    };
+  };
+
   return (
-    <section className="chat-entry local">
+    <section className={chatEntryClass()}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
